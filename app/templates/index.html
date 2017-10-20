@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Super Peer DB</title>
+  <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-beta.2/css/bootstrap.min.css" integrity="sha384-PsH8R72JQ3SOdhVi3uxftmaW6Vc51MKb0q5P2rRUpPvrszuE4W1povHYgTpBfshb" crossorigin="anonymous">
+</head>
+   <body>
+      
+      <div class="jumbotron">
+
+      <form action = "/speers" method = "POST">
+      <div class="form-group">
+         <p>Enter IP and Port of SUPER PEER:</p>
+         <label for="ip">IP:</label>
+         <p><input type = "text" name = "ip" /></p>
+
+         <label for="email">PORT:</label>
+         <p><input type = "text" name = "port" /></p>
+
+         <p><input type = "submit" value = "ADD" /></p>
+      </div>
+      </form>
+
+      <div>
+      {% for peer in response %}
+      <ul class="list-group">
+      <li class="list-group-item"> 
+      <p> ID {{peer.id}}; IP {{peer.ip}}; PORT {{peer.port}} </p>
+      </li>
+      </ul>
+      {% endfor %}
+      </div>
+
+      </div>
+
+
+      
+   </body>
+</html>
